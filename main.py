@@ -54,7 +54,50 @@ def main():
         print("\nOpción del jugador => ", user_option)
         print("\nOpción del pc => ", computer_option)
         
-        break
+        #Empate
+        if user_option == computer_option:
+            print("\nEmpate!\n")
+            time.sleep(1)
+        
+        #Victorias
+        elif user_option == "piedra":
+            if computer_option == "tijera":
+                print("\nPiedra gana a Tijera\n")
+                print("Ganaste un punto\n")
+                user_wins += 1
+            else:
+                print("\nPapel gana a Piedra\n")
+                print("La PC gana un punto\n")
+                computer_wins += 1
+        
+        elif user_option == "papel":
+            if computer_option == "piedra":
+                print("\nPapel gana a Piedra\n")
+                print("Ganaste un punto\n")
+                user_wins += 1
+            else:
+                print("\nTijera gana a Papel\n")
+                print("La PC gana un punto\n")
+                computer_wins += 1
+        
+        elif user_option == "tijera":
+            if computer_option == "papel":
+                print("\nTijera gana a Papel\n")
+                print("Ganaste un punto\n")
+                user_wins += 1
+            else:
+                print("\nPiedra gana a Tijera\n")
+                print("La PC gana un punto\n")
+                computer_wins += 1
+        
+        #Ganadores
+        if computer_wins == 2:
+            print("El ganador es la PC!!!\n")
+            break
+        
+        if user_wins == 2:
+            print("Felicidades Ganaste!!!\n")
+            break
 
 if __name__ == '__main__':
     main()
